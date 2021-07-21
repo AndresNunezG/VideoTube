@@ -1,0 +1,44 @@
+.Search__main {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    background-color: #4AC7EE;
+}
+
+.Search__main-container h1 {
+    color: #FFFFFF;
+}
+
+.SearchBar__container {
+    width: 100%;
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.SearchBar__icon {
+    color: #F9C80E;
+    position: absolute;
+    margin-left: 90%;
+    width: 10%;
+    height: 30px;
+    font-size: 18px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.SearchBar__input {
+    width: 100%;
+    height: 30px;
+    border-radius: 5px;
+    border: 2px solid #FFF;
+    transition: 200ms ease;
+    color: #AAA;
+}
+
+.SearchBar__input:focus {
+    outline: none;
+    border: 2px solid #F9C80E;
+}
