@@ -1,0 +1,9 @@
+.Carousel__container {
+    display: flex;
+    height: 300px;
+    align-items: center;
+    overflow-x: scroll;
+    padding: 0 10px;
+    width: 100%;
+    position: relative;
+}
