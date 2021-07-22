@@ -8,9 +8,9 @@
     width: 200px;
     height: 250px;
     transition: 450ms all;
-    transform-origin: left;
+    transform-origin: center left;
     margin-right: 10px;
-    font-size: 20px;
+    font-size: 15px;
     color: #FFF;
 }
 
@@ -29,9 +29,10 @@
 .Item__details-container {
     position: absolute;
     width: 100%;
+    height: 100%;
     padding: 10px;
     bottom: 0;
-    top: 0;
+    margin: 0;
     opacity: 0;
     background: linear-gradient(to top, rgba(0,0,0,0.9) 10%, rgba(0,0,0,0) 100%);
     display: flex;
@@ -44,12 +45,16 @@
     opacity: 1;
 }
 
-.Item__icon-play,
-.Item__icon-pause {
-    color: #F9C80E;
+.Item__icon-play {
+    font-size: 25px;
     margin-right: 8px;
+    transition: 200ms;
+}
+
+.Item__icon-play:hover {
+    color: #F9C80E;
 }
 
 .Item__details-subtitle {
-    font-size: 15px;
+    font-size: 10px;
 }

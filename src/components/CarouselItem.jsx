@@ -8,7 +8,6 @@ const CarouselItem = () => (
         <div className="Item__details-container">
             <div>
                 <i className="Item__icon-play far fa-play-circle"></i>
-                <i className="Item__icon-pause far fa-pause-circle"></i>
             </div>
             <p className="Item__details-title">Titulo descriptivo</p>
             <p className="Item__details-subtitle">2016 16+ 114 minutos</p>
