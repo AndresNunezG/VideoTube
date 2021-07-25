@@ -21,7 +21,7 @@ function Home() {
     const coversTop3 = useAPI(coversAPI(chaptersTop3));
     const coversRecommended = useAPI(coversAPI(chaptersRecommended));
 
-    if (!coversTop3.length || !coversMyList.length || !coversRecommended.length) {
+    if (!coversTop3[0].length || !coversMyList[0].length || !coversRecommended[0].length) {
         return (
             <React.Fragment>
                 <Search />
@@ -31,9 +31,9 @@ function Home() {
     }
 
     const liCarouselItem = (arrayCovers) => (
-        (arrayCovers.length)
+        (arrayCovers[0].length || arrayCovers[1])
         ?
-        arrayCovers.map(cover => (
+        arrayCovers[0].map(cover => (
             <li key={cover.id} className="Carousel__list-element">
                 <CarouselItem data={cover} />
             </li>
@@ -45,7 +45,7 @@ function Home() {
     return (
         <React.Fragment>
             <Search />
-            <Carousel title="My lista">
+            <Carousel title="My list">
                 <ul className="Carousel__list">
                     {liCarouselItem(coversMyList)}
                 </ul>
