@@ -7,7 +7,7 @@ function Header() {
     return (
         <header className="Header__container">
             <div className="Header__title-container">
-                <h1 className="Header__title-1">Game</h1>
+                <h1 className="Header__title-1">Video</h1>
                 <h1 className="Header__title-2">Tube&nbsp;</h1>
                 <i className="Header__title-icon fas fa-video"></i>
             </div>
