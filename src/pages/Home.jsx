@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import Search from '../components/Search';
 import Carousel from '../components/Carousel';
 import CarouselItem from '../components/CarouselItem';
+import Loader from '../components/Loader';
 
 import useAPI from '../hooks/useAPI';
 
@@ -24,7 +25,7 @@ function Home() {
         return (
             <React.Fragment>
                 <Search />
-                <p>Cargando</p>
+                <Loader />
             </React.Fragment>
         )
     }
