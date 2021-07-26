@@ -4,7 +4,7 @@ import '../assets/styles/components/Loader.scss'
 
 const Loader = () => (
     <div className="Loader__container">
-        <div class="lds-spinner">
+        <div className="lds-spinner">
             <div></div>
             <div></div>
             <div></div>

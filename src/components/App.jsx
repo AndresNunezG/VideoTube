@@ -3,12 +3,14 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import Layout from './Layout';
 import Home from '../pages/Home'
+import ErrorMessage from './ErrorMessage';
 
 const App = () => (
     <BrowserRouter>
         <Layout>
             <Switch>
                 <Route exact path="/" component={Home}/>
+                <Route exact path="/u" component={ErrorMessage} />
             </Switch>
         </Layout>
     </BrowserRouter>

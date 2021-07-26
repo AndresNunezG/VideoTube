@@ -7,7 +7,7 @@ const useAPI = (API) => {
         fetch(API)
           .then(response => response.json())
           .then(data => setData(data))
-          .catch(error => setError(error));
+          .catch(err => setError(true));
     }, []);
     return [dataList, error];
 };

@@ -12,35 +12,29 @@ function Home() {
     const arrayGenerator = (len) => Array.from({length: len}, () => Math.floor(Math.random() * 671));
 
     const chaptersMyList = arrayGenerator(10);
-    const chaptersTop3 = arrayGenerator(3);
     const chaptersRecommended = arrayGenerator(20);
+    const chaptersTop5 = arrayGenerator(5);
 
     const coversAPI = (ids) => `https://rickandmortyapi.com/api/character/${ids}`;
 
     const coversMyList = useAPI(coversAPI(chaptersMyList));
-    const coversTop3 = useAPI(coversAPI(chaptersTop3));
+    const coversTop5 = useAPI(coversAPI(chaptersTop5));
     const coversRecommended = useAPI(coversAPI(chaptersRecommended));
 
-    if (!coversTop3[0].length || !coversMyList[0].length || !coversRecommended[0].length) {
-        return (
-            <React.Fragment>
-                <Search />
-                <Loader />
-            </React.Fragment>
-        )
+    const liCarouselItem = (arrayCovers) => {
+        if (arrayCovers[0].length) {
+            return(
+                arrayCovers[0].map(cover => (
+                    <li key={cover.id} className="Carousel__list-element">
+                    <CarouselItem data={cover} />
+                </li>
+                ))
+            );       
+        }
+        else if (!arrayCovers[1]) {
+            return <Loader />
+        }
     }
-
-    const liCarouselItem = (arrayCovers) => (
-        (arrayCovers[0].length || arrayCovers[1])
-        ?
-        arrayCovers[0].map(cover => (
-            <li key={cover.id} className="Carousel__list-element">
-                <CarouselItem data={cover} />
-            </li>
-        ))
-        :
-        <p>Error</p>
-    )
 
     return (
         <React.Fragment>
@@ -57,7 +51,7 @@ function Home() {
             </Carousel>
             <Carousel title="Top 5">
                 <ul className="Carousel__list">
-                    {liCarouselItem(coversTop3)}
+                    {liCarouselItem(coversTop5)}
                 </ul>
             </Carousel>
         </React.Fragment>
