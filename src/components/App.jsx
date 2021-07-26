@@ -10,7 +10,7 @@ const App = () => (
         <Layout>
             <Switch>
                 <Route exact path="/" component={Home}/>
-                <Route exact path="/u" component={ErrorMessage} />
+                <Route component={ErrorMessage} />
             </Switch>
         </Layout>
     </BrowserRouter>

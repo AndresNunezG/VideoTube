@@ -9,6 +9,7 @@ const useAPI = (API) => {
           .then(data => setData(data))
           .catch(err => setError(true));
     }, []);
+
     return [dataList, error];
 };
 
