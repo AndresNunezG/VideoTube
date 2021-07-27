@@ -21,3 +21,12 @@ body {
 .Carousel__list-element {
   float: left;
 }
+
+.Carousel__container,
+.Category__container {
+  background-color: #eaeaea;
+}
+
+.NotFound__message {
+  color: #4AC7EE;
+}

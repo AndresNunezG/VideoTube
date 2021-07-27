@@ -43,7 +43,7 @@ function Home() {
                     {
                         (filteredItems === null)
                         ?
-                        <p>Sorry :( No items were found</p>
+                        <p className="NotFound__message">Sorry :( No items were found</p>
                         :
                         liCarouselItem(filteredItems)
                     }

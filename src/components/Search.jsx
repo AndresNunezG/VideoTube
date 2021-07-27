@@ -16,7 +16,7 @@ const Search = (props) => {
                         name="search"
                         placeholder="Search"
                         value={props.inputValue}>
-                    </input>     
+                    </input>
                 </div>
             </div>
         </div>
