@@ -49,7 +49,7 @@
     font-size: 20px;
 }
 
-.Header__menu ul {
+.Header__ddlist {
     background-color: #081845;
     display: none;
     list-style: none;
@@ -61,19 +61,23 @@
     width: 100%;
 }
 
-.Header__menu ul li {
-    color: #FFF;
+.Header__ddlist li {
     padding-bottom: 0.4em;
 }
 
-.Header__menu ul a {
-    text-decoration: none;
+.Header__menu button {
+    border-style: none;
+    background: none;
+    cursor: pointer;
+
+    color: #FFF;
+    font-size: 16px;
 }
 
-.Header__menu:hover ul {
+.Header__menu:hover .Header__ddlist {
     display: block;
 }
 
-.Header__menu li:hover {
+.Header__menu button:hover {
     color: #F9C80E;
 }
