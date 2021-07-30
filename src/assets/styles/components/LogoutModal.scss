@@ -1,0 +1,34 @@
+.Logout__container {
+    padding: 0.6em 1.2em;
+}
+
+.Logout__title {
+    color: #F9C80E;
+    margin: 5px 0;
+}
+
+.Button__container {
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+}
+
+a {
+    text-decoration: none;
+}
+
+.Button__continue {
+    border-style: none;
+    background: #F9C80E;
+    font-size: 15px;
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin: 0 0 10px 0;
+    transition: 200ms;
+}
+
+.Button__continue:hover {
+    color: #FFF;
+}
