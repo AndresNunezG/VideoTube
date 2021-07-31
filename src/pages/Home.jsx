@@ -1,5 +1,7 @@
 import React from 'react';
 
+import ImgWave1 from '../assets/static/ImgWave1.svg'
+import ImgWave2 from '../assets/static/ImgWave2.svg'
 import '../assets/styles/Home.scss'
 
 class Home extends React.Component {
@@ -30,6 +32,16 @@ class Home extends React.Component {
                                 <button className="Button__login">Continue</button>
                             </div>
                         </form>
+                    </div>
+                </div>
+                <div className="Background__container">
+                    <div className="Image__container">
+                        <div className="Image__container-1">
+                            <img src={ImgWave2} alt="imgwave2" />
+                        </div>
+                        <div className="Image__container-2">
+                            <img src={ImgWave1} alt="imgwave1" />
+                        </div>
                     </div>
                 </div>
             </div>
