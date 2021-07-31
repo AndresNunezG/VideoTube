@@ -13,7 +13,7 @@ function Home() {
     const arrayGenerator = (len) => Array.from({length: len}, () => Math.floor(Math.random() * 671));
     const coversAPI = (ids) => `https://rickandmortyapi.com/api/character/${ids}`;
 
-    let coversMyList = useAPI(coversAPI(arrayGenerator(100)));
+    let coversMyList = useAPI(coversAPI(arrayGenerator(50)));
     const coversRecommended = useAPI(coversAPI(arrayGenerator(10)));
     const coversTop5 = useAPI(coversAPI(arrayGenerator(5)));
 

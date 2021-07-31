@@ -1,17 +1,15 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import LogoutModal from './LogoutModal';
+import AccountModal from './AccountModal';
 
+import useModal from '../hooks/useModal';
 import '../assets/styles/components/Header.scss'
 
-function Header() {
-    const [modalIsOpen, setModalIsOpen] = useState(undefined);
-    const handleOpenModal = (e) => {
-        setModalIsOpen(true)
-    }
-    const handleCloseModal = (e) => {
-        setModalIsOpen(false)
-    }
+
+function Header(props) {
+    const [modalLogoutIsOpen, handleOpenLogoutModal, handleCloseLogoutModal] = useModal();
+    const [modalAccountIsOpen, handleOpenAccountModal, handleCloseAccountModal] = useModal();
     return (
         <header className="Header__container">
             <div className="Header__title-container">
@@ -26,16 +24,17 @@ function Header() {
                 </div>
                 <ul className="Header__ddlist">
                     <li>
-                        <button>
+                        <button type="button" onClick={handleOpenAccountModal}>
                             Account
                         </button>
                     </li>
                     <li>
-                        <button type="button" onClick={handleOpenModal}>
+                        <button type="button" onClick={handleOpenLogoutModal}>
                             Sign out
                         </button>
                     </li>
-                    <LogoutModal onCloseModal={handleCloseModal} isOpen={modalIsOpen} />
+                    <AccountModal onCloseModal={handleCloseAccountModal} isOpen={modalAccountIsOpen} />
+                    <LogoutModal onCloseModal={handleCloseLogoutModal} isOpen={modalLogoutIsOpen} />
                 </ul>
             </div>
         </header>

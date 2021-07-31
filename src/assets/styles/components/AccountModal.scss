@@ -1,0 +1,28 @@
+.Account__container {
+    display: flex;
+    align-items: center;
+
+    padding: 5px 1.2em;
+}
+
+.Picture__container i {
+    font-size: 10rem;
+    color: #4AC7EE;
+}
+
+.Details__container {
+    padding-left: 2em;
+}
+
+.Detail__field {
+    display: flex;
+    align-items: center;
+}
+
+.Details__container h3 {
+    color: #081845;
+}
+
+.Details__container p {
+    font-size: 20px;
+}
