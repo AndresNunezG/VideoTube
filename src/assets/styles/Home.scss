@@ -1,0 +1,82 @@
+.Home__container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Login__container {
+    background: #081845;
+    color: #FFF;
+    border-radius: 10px;
+    padding: 1em 2em;
+    width: 450px;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.Title__container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 0 1em 0;
+}
+
+.Title__container h1, i {
+    margin: 0;
+}
+
+.Login__title-1 {
+    color: #4AC7EE;
+    font-weight: 300;
+}
+
+.Login__title-2 {
+    font-weight: 700;
+}
+
+.Login__title-icon {
+    font-size: 40px;
+}
+
+.LoginForm {
+    display: flex;
+    flex-direction: column;
+}
+
+.Field__container {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: 1fr;
+    margin: 0 0 1em 0;
+}
+
+.Field-label {
+    grid-column: 2 / 5;
+}
+
+.Field-input {
+    width: 100%;
+    grid-column: 5 / -2;
+    border-radius: 5px;
+}
+
+.Button__container {
+    margin-top: 2em;
+}
+
+.Button__login {
+    border-style: none;
+    background: #F9C80E;
+    border-radius: 5px;
+    padding: 5px;
+    width: 25%;
+    transition: 200ms;
+}
+
+.Button__login:hover {
+    color: #FFF;
+}

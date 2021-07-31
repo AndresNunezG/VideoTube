@@ -1,66 +1,40 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 
-import Search from '../components/Search';
-import Carousel from '../components/Carousel';
-import CarouselItem from '../components/CarouselItem';
-import Loader from '../components/Loader';
+import '../assets/styles/Home.scss'
 
-import useAPI from '../hooks/useAPI';
-import useSearchQuery from '../hooks/useSearchQuery';
-import useSearchItem from '../hooks/useSearchItem';
-
-function Home() {
-    const arrayGenerator = (len) => Array.from({length: len}, () => Math.floor(Math.random() * 671));
-    const coversAPI = (ids) => `https://rickandmortyapi.com/api/character/${ids}`;
-
-    let coversMyList = useAPI(coversAPI(arrayGenerator(50)));
-    const coversRecommended = useAPI(coversAPI(arrayGenerator(10)));
-    const coversTop5 = useAPI(coversAPI(arrayGenerator(5)));
-
-    const {query, setQuery} = useSearchQuery();
-    const filteredItems = useSearchItem(query, coversMyList[0]);
-
-    const liCarouselItem = (arrayCovers) => {
-        if (arrayCovers.length === 0) {
-            return <Loader />
-        }
-        else {
-            return(
-                arrayCovers.map(cover => (
-                    <li key={cover.id} className="Carousel__list-element">
-                    <CarouselItem data={cover} />
-                </li>
-                ))
-            );       
-        }
+class Home extends React.Component {
+    render () {
+        return (
+            <div className="Home__container">
+                <div className="Login__container">
+                    <div className="Title__container">
+                        <h1 className="Login__title-1">Video</h1>
+                        <h1 className="Login__title-2">Tube&nbsp;</h1>
+                        <i className="Login__title-icon fas fa-video"></i>
+                    </div>
+                    <div className="LoginForm__container">
+                        <form className="LoginForm">
+                            <div className="Field__container Field-name">
+                                <label className="Field-label" htmlFor="name">Name</label>
+                                <input className="Field-input" name="name" id="name"></input>
+                            </div>
+                            <div className="Field__container Field-email">
+                                <label className="Field-label" htmlFor="email">Email</label>
+                                <input className="Field-input" type="email" min="0" name="email" id="email"></input>
+                            </div>
+                            <div className="Field__container Field-age">
+                                <label className="Field-label" htmlFor="age">Age</label>
+                                <input className="Field-input" type="number" min="0" max="100" name="age" id="age"></input>
+                            </div>
+                            <div className="Button__container">
+                                <button className="Button__login">Continue</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        )
     }
-
-    return (
-        <React.Fragment>
-            <Search inputValue={query} handleChange={(e) => {setQuery(e.target.value)}} />
-            <Carousel title="My list">
-                <ul className="Carousel__list">
-                    {
-                        (filteredItems === null)
-                        ?
-                        <p className="NotFound__message">Sorry :( No items were found</p>
-                        :
-                        liCarouselItem(filteredItems)
-                    }
-                </ul>
-            </Carousel>
-            <Carousel title="Recommended">
-                <ul className="Carousel__list">
-                    {liCarouselItem(coversRecommended[0])}
-                </ul>
-            </Carousel>
-            <Carousel title="Top 5">
-                <ul className="Carousel__list">
-                    {liCarouselItem(coversTop5[0])}
-                </ul>
-            </Carousel>
-        </React.Fragment>
-    )
 }
 
 export default Home;

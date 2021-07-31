@@ -1,4 +1,5 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 
 import LogoutModal from './LogoutModal';
 import AccountModal from './AccountModal';
@@ -6,8 +7,8 @@ import AccountModal from './AccountModal';
 import useModal from '../hooks/useModal';
 import '../assets/styles/components/Header.scss'
 
-
 function Header(props) {
+    if (props.location.pathname == "/") return null;
     const [modalLogoutIsOpen, handleOpenLogoutModal, handleCloseLogoutModal] = useModal();
     const [modalAccountIsOpen, handleOpenAccountModal, handleCloseAccountModal] = useModal();
     return (
@@ -41,4 +42,4 @@ function Header(props) {
     );
 }
 
-export default Header;
+export default withRouter(Header);
