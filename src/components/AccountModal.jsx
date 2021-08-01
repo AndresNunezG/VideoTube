@@ -12,16 +12,16 @@ const AccountModal = (props) => {
                 </div>
                 <div className="Details__container">
                     <div className="Detail__field">
+                        <h3>Email:&nbsp;</h3>
+                        <p>{props.accountData.email}</p>
+                    </div>
+                    <div className="Detail__field">
                         <h3>Name:&nbsp;</h3>
-                        <p>Andrés</p>
+                        <p>{props.accountData.name}</p>
                     </div>
                     <div className="Detail__field">
                         <h3>Age:&nbsp;</h3>
-                        <p>22</p>
-                    </div>
-                    <div className="Detail__field">
-                        <h3>Email:&nbsp;</h3>
-                        <p>andres@email.com</p>
+                        <p>{props.accountData.age}</p>
                     </div>
                 </div>
             </div>

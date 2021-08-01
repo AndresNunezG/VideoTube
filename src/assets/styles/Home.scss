@@ -76,7 +76,7 @@
 }
 
 .Button__container {
-    margin-top: 2em;
+    margin-top: 1em;
 }
 
 .Button__login {
@@ -91,6 +91,22 @@
 
 .Button__login:hover {
     color: #FFF;
+}
+
+.Message__container {
+    width: 100%;
+    color: #F9C80E;
+    display: flex;
+    justify-content: center;
+    opacity: 0;
+}
+
+.Message-active {
+    opacity: 1;
+}
+
+.Message__container p {
+    margin: 1em 0 0 0;
 }
 
 .Background__container {

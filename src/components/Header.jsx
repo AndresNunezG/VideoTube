@@ -34,8 +34,15 @@ function Header(props) {
                             Sign out
                         </button>
                     </li>
-                    <AccountModal onCloseModal={handleCloseAccountModal} isOpen={modalAccountIsOpen} />
-                    <LogoutModal onCloseModal={handleCloseLogoutModal} isOpen={modalLogoutIsOpen} />
+                    <AccountModal
+                        onCloseModal={handleCloseAccountModal}
+                        isOpen={modalAccountIsOpen}
+                        accountData={props.location.state}
+                    />
+                    <LogoutModal
+                        onCloseModal={handleCloseLogoutModal}
+                        isOpen={modalLogoutIsOpen}
+                    />
                 </ul>
             </div>
         </header>

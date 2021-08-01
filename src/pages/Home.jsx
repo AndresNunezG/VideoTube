@@ -5,9 +5,9 @@ import ImgWave2 from '../assets/static/ImgWave2.svg'
 import '../assets/styles/Home.scss'
 
 class Home extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
+    state = {
+        invalidData: false,
+        form : {
             name: '',
             age: '',
             email: '',
@@ -15,20 +15,22 @@ class Home extends React.Component {
     }
     handleClick = (e) => {
         e.preventDefault();
-        if (this.state.name && this.state.age && this.state.email) {
+        if (this.state.form.name && this.state.form.age && this.state.form.email) {
             this.props.history.push({
                 pathname: '/browse',
-                state: {...this.state}
+                state: {...this.state.form}
             });
         }
         else {
-            alert('campo vacio')
+            this.setState({invalidData: true})
         }
     }
     handleChange = (e) => {
         this.setState({
-            ...this.state,
-            [e.target.name]: e.target.value,
+            form: {
+                ...this.state.form,
+                [e.target.name]: e.target.value,
+            }
         })
     }
     render () {
@@ -46,7 +48,7 @@ class Home extends React.Component {
                                 <label className="Field-label" htmlFor="name">Name</label>
                                 <input
                                     onChange={this.handleChange}
-                                    value={this.state.name}
+                                    value={this.state.form.name}
                                     className="Field-input"
                                     name="name"
                                     id="name">
@@ -57,7 +59,7 @@ class Home extends React.Component {
                                 <input
                                     onChange={this.handleChange}
                                     className="Field-input"
-                                    value={this.state.email}
+                                    value={this.state.form.email}
                                     type="email"
                                     name="email"
                                     id="email">
@@ -68,7 +70,7 @@ class Home extends React.Component {
                                 <input
                                     onChange={this.handleChange}
                                     className="Field-input"
-                                    value={this.state.age}
+                                    value={this.state.form.age}
                                     type="number" min="0"
                                     max="100" name="age"
                                     id="age">
@@ -76,6 +78,9 @@ class Home extends React.Component {
                             </div>
                             <div className="Button__container">
                                 <button onClick={this.handleClick} type="button" className="Button__login">Continue</button>
+                            </div>
+                            <div className={(this.state.invalidData ? "Message__container Message-active" : "Message__container")}>
+                                <p>Please complete all fields</p>
                             </div>
                         </form>
                     </div>
