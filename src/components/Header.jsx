@@ -8,7 +8,11 @@ import useModal from '../hooks/useModal';
 import '../assets/styles/components/Header.scss'
 
 function Header(props) {
-    if (props.location.pathname == "/") return null;
+    if (props.location.pathname !== "/browse") return null;
+    if (props.location.pathname == "/browse" && props.location.state === undefined) {
+        props.history.push(("/"))
+        return null;
+    }
     const [modalLogoutIsOpen, handleOpenLogoutModal, handleCloseLogoutModal] = useModal();
     const [modalAccountIsOpen, handleOpenAccountModal, handleCloseAccountModal] = useModal();
     return (

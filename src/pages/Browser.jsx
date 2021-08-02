@@ -9,7 +9,7 @@ import useAPI from '../hooks/useAPI';
 import useSearchQuery from '../hooks/useSearchQuery';
 import useSearchItem from '../hooks/useSearchItem';
 
-function Browser() {
+function Browser(props) {
     const arrayGenerator = (len) => Array.from({length: len}, () => Math.floor(Math.random() * 671));
     const coversAPI = (ids) => `https://rickandmortyapi.com/api/character/${ids}`;
 
@@ -34,7 +34,6 @@ function Browser() {
             );       
         }
     }
-
     return (
         <React.Fragment>
             <Search inputValue={query} handleChange={(e) => {setQuery(e.target.value)}} />
