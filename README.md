@@ -1,6 +1,6 @@
 # VideoTube
 
-Single page app that simulates a video platform with a login page that primarily uses ReactJS.
+Single page app that simulates a video platform using the Rick & Morty API, with a login page that primarily uses ReactJS.
 
 If you want to clone it, you'll need **`npm`** and **`nodeJS`**, among others.
 
