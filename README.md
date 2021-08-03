@@ -20,6 +20,8 @@ Filter MyList Carousel by name, status or origin
 
 ![Login](./ReadmeImages/ImgSearch.png)
 
+### 🔸 Functional Login without Auth
+
 ## 🔹 Technology
 
 These are the Technologies and tools used for the project
