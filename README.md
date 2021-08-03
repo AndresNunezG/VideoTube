@@ -1,6 +1,36 @@
 # VideoTube
 
+Single page app that simulates a video platform with a login page that primarily uses ReactJS.
+
+If you want to clone it, you'll need **`npm`** and **`nodeJS`**, among others.
+
 ## 🔹 Features
+
+### 🔸 Like option
+
+Like any card you want
+
+<img src="./ReadmeImages/ImgLike1.png" alt="drawing" width="200"/>
+
+<img src="./ReadmeImages/ImgLike2.png" alt="drawing" width="200"/>
+
+### 🔸 Search with filters
+
+Filter MyList Carousel by name, status or origin
+
+![Login](./ReadmeImages/ImgSearch.png)
+
+## 🔹 Technology
+
+These are the Technologies and tools used for the project
+
+- ReactJS
+- React Router DOM
+- Webpack
+- ESLint
+- Babel
+- Sass
+- React Hooks
 
 ## 🔹 Screenshots
 
@@ -23,16 +53,6 @@
 ### 🔸 Sign out Modal
 
 ![Login](./ReadmeImages/ImgSignoutModal.png)
-
-## 🔹 Technology
-
-- ReactJS
-- React Router DOM
-- Webpack
-- ESLint
-- Babel
-- Sass
-- React Hooks
 
 **from**: 🇨🇴  
 **by**: Andrés Núñez
